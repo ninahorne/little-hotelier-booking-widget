@@ -280,21 +280,23 @@
     });
   
   
-  document.getElementById('plusOneGuest').addEventListener('click', ()=> {
-    const numberOfAdultsInput = document.getElementById('number_adults')
-    const guestValue = Number(numberOfAdultsInput.value) || 0;
+  $('#plusOneGuest').click(()=> {
+    console.log('click')
+    const numberOfAdultsInput = $('#number_adults')
+    const guestValue = Number(numberOfAdultsInput.val()) || 0;
     const newValue = guestValue + 1;
-    numberOfAdultsInput.value = newValue;
-    const numberOfGuestsLabel = document.getElementById('numberOfGuests');
-    numberOfGuestsLabel.innerText = String(newValue);
+    numberOfAdultsInput.val(newValue);
+    const numberOfGuestsLabel = $('#numberOfGuests');
+    numberOfGuestsLabel.text(String(newValue));
   })
-  document.getElementById('minusOneGuest').addEventListener('click', ()=> {
-    const numberOfAdultsInput = document.getElementById('number_adults')
-    const guestValue = Number(numberOfAdultsInput.value) || 0;
+  $('#minusOneGuest').click(()=> {
+    console.log("here")
+    const numberOfAdultsInput = $('#number_adults')
+    const guestValue = Number(numberOfAdultsInput.val()) || 0;
     const newValue = guestValue - 1 > 0 ? guestValue -1 : 1;
-    numberOfAdultsInput.value = newValue;
-    const numberOfGuestsLabel = document.getElementById('numberOfGuests');
-    numberOfGuestsLabel.innerText = String(newValue);
+    numberOfAdultsInput.val(newValue);
+    const numberOfGuestsLabel = $('#numberOfGuests');
+    numberOfGuestsLabel.text(String(newValue));
   })
   
   </script>
