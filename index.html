@@ -1,5 +1,4 @@
 <meta content="width=device-width, initial-scale=1" name="viewport" />
-<script src="https://widget.siteminder.com/ibe.min.js"></script>
 <script
   type="text/javascript"
   src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
@@ -86,8 +85,9 @@
   }
   .daterangepicker {
     top: 120px !important;
-    left: calc(100vw - (100vw - 532.5px)) !important;
+    left: 0 !important;
     width: 532.5px;
+    max-width: 100%;
     font-family: 'Roboto', sans-serif;
   }
   .daterangepicker td.active, .daterangepicker td.start-date.end-date, .daterangepicker td.active, .daterangepicker td.active:hover {
@@ -138,95 +138,163 @@
     }
   }
 </style>
-<form class="booking-form">
-  <input type="date" name="date_range_picker" id="date_range_picker" hidden>
-  <div class="form-field">
-    <label for="date_range_picker">
-      <span class="form-field__label"> Check In </span>
-      <span class="form-field__button"
-        >
-        <span id="checkInDate">
-          Select Date
-        </span>
-        <span class="form-field__chevron"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13.273"
-            height="6.638"
-            viewBox="0 0 13.273 6.638"
+  
+
+  <form data-region="emea" data-channelcode="734unionstreetdirect" class="ibe booking-form" action="#" method="GET">
+    <input type="date" name="date_range_picker" id="date_range_picker" hidden>
+    <div class="form-field">
+      <label for="date_range_picker">
+        <span class="form-field__label"> Check In </span>
+        <span class="form-field__button"
           >
-            <path
-              d="M.119,175.27a.5.5,0,0,1,.348-.178.472.472,0,0,1,.322.126l5.841,5.367,5.841-5.367a.474.474,0,0,1,.644.7L6.951,181.6a.473.473,0,0,1-.644,0l-6.164-5.69A.445.445,0,0,1,.119,175.27Z"
-              transform="translate(0.007 -175.092)"
-            /></svg></span
-      ></span>
-    </label>
-    <input hidden id="check_in_date" type="date" name="check_in_date" />
-  </div>
-  <div class="form-field">
-    <label for="date_range_picker">
-      <span class="form-field__label"> Check Out </span>
-      <span class="form-field__button"
-        >
-        <span id="checkOutDate">
-          
-          Select Date
-        </span>
-        <span class="form-field__chevron"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13.273"
-            height="6.638"
-            viewBox="0 0 13.273 6.638"
+          <span id="checkInDate">
+            Select Date
+          </span>
+          <span class="form-field__chevron"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13.273"
+              height="6.638"
+              viewBox="0 0 13.273 6.638"
+            >
+              <path
+                d="M.119,175.27a.5.5,0,0,1,.348-.178.472.472,0,0,1,.322.126l5.841,5.367,5.841-5.367a.474.474,0,0,1,.644.7L6.951,181.6a.473.473,0,0,1-.644,0l-6.164-5.69A.445.445,0,0,1,.119,175.27Z"
+                transform="translate(0.007 -175.092)"
+              /></svg></span
+        ></span>
+      </label>
+      <input data-region="emea" data-channelcode="734unionstreetdirect" hidden id="check_in_date" type="date" name="check_in_date" />
+    </div>
+    <div class="form-field">
+      <label for="date_range_picker">
+        <span class="form-field__label"> Check Out </span>
+        <span class="form-field__button"
           >
-            <path
-              d="M.119,175.27a.5.5,0,0,1,.348-.178.472.472,0,0,1,.322.126l5.841,5.367,5.841-5.367a.474.474,0,0,1,.644.7L6.951,181.6a.473.473,0,0,1-.644,0l-6.164-5.69A.445.445,0,0,1,.119,175.27Z"
-              transform="translate(0.007 -175.092)"
-            /></svg></span></span
-    ></label>
+          <span id="checkOutDate">
+            
+            Select Date
+          </span>
+          <span class="form-field__chevron"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13.273"
+              height="6.638"
+              viewBox="0 0 13.273 6.638"
+            >
+              <path
+                d="M.119,175.27a.5.5,0,0,1,.348-.178.472.472,0,0,1,.322.126l5.841,5.367,5.841-5.367a.474.474,0,0,1,.644.7L6.951,181.6a.473.473,0,0,1-.644,0l-6.164-5.69A.445.445,0,0,1,.119,175.27Z"
+                transform="translate(0.007 -175.092)"
+              /></svg></span></span
+      ></label>
+  
+      <input data-region="emea" data-channelcode="734unionstreetdirect" hidden id="check_out_date" type="date" name="check_out_date" />
+    </div>
+    <div class="form-field">
+      <label for="number_adults">
+        <span class="form-field__label"> Guests</span>
+        <span class="form-field__button"
+          >
+          <span id="minusOneGuest" class="form-field__minus">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.473" height="1.113" viewBox="0 0 14.473 1.113"><path d="M30.473,240.557a.558.558,0,0,1-.557.557H16.557a.557.557,0,1,1,0-1.113H29.916A.558.558,0,0,1,30.473,240.557Z" transform="translate(-16 -240)"/></svg>
+          </span>
+          <span id="numberOfGuests">1</span>
+          <span id="plusOneGuest" class="form-field__plus">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14.473" height="14.473" viewBox="0 0 14.473 14.473"><path d="M30.473,55.246a.558.558,0,0,1-.557.557H23.793v6.123a.557.557,0,1,1-1.113,0V55.8H16.557a.557.557,0,1,1,0-1.113H22.68V48.566a.557.557,0,0,1,1.113,0v6.123h6.123A.558.558,0,0,1,30.473,55.246Z" transform="translate(-16 -48.01)"/></svg>
+          </span>
+      </label>
+      <input data-region="emea" data-channelcode="734unionstreetdirect" id="number_adults" hidden type="number" value="1" name="number_adults" />
+    </div>
+    <div class="form-field submit">
+      <label class="form-field__submit-label" for="submit">Search</label>
+      <input data-region="emea" data-channelcode="734unionstreetdirect" id="submit" hidden class="form-field__submit" type="submit">
+    </div>
+  </form>
+  <script src="https://widget.siteminder.com/ibe.min.js"></script>
 
-    <input hidden id="check_out_date" type="date" name="check_out_date" />
-  </div>
-  <div class="form-field">
-    <label for="number_adults">
-      <span class="form-field__label"> Guests</span>
-      <span class="form-field__button"
-        >
-        <span id="minusOneGuest" class="form-field__minus">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14.473" height="1.113" viewBox="0 0 14.473 1.113"><path d="M30.473,240.557a.558.558,0,0,1-.557.557H16.557a.557.557,0,1,1,0-1.113H29.916A.558.558,0,0,1,30.473,240.557Z" transform="translate(-16 -240)"/></svg>
-        </span>
-        <span id="numberOfGuests">1</span>
-        <span id="plusOneGuest" class="form-field__plus">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14.473" height="14.473" viewBox="0 0 14.473 14.473"><path d="M30.473,55.246a.558.558,0,0,1-.557.557H23.793v6.123a.557.557,0,1,1-1.113,0V55.8H16.557a.557.557,0,1,1,0-1.113H22.68V48.566a.557.557,0,0,1,1.113,0v6.123h6.123A.558.558,0,0,1,30.473,55.246Z" transform="translate(-16 -48.01)"/></svg>
-        </span>
-    </label>
-    <input id="number_adults" hidden type="number" value="1" name="number_adults" />
-  </div>
-  <div class="form-field submit">
-    <label class="form-field__submit-label" for="submit">Search</label>
-    <input id="submit" hidden class="form-field__submit" type="submit">
-  </div>
-</form>
-<script>
-  $('input[name="date_range_picker"]').daterangepicker({
-    autoApply: true,
-  });
-
-document.getElementById('plusOneGuest').addEventListener('click', ()=> {
-  const numberOfAdultsInput = document.getElementById('number_adults')
-  const guestValue = Number(numberOfAdultsInput.value) || 0;
-  const newValue = guestValue + 1;
-  numberOfAdultsInput.value = newValue;
-  const numberOfGuestsLabel = document.getElementById('numberOfGuests');
-  numberOfGuestsLabel.innerText = String(newValue);
-})
-document.getElementById('minusOneGuest').addEventListener('click', ()=> {
-  const numberOfAdultsInput = document.getElementById('number_adults')
-  const guestValue = Number(numberOfAdultsInput.value) || 0;
-  const newValue = guestValue - 1 > 0 ? guestValue -1 : 1;
-  numberOfAdultsInput.value = newValue;
-  const numberOfGuestsLabel = document.getElementById('numberOfGuests');
-  numberOfGuestsLabel.innerText = String(newValue);
-})
-
-</script>
+  <script>
+    const dateRangePicker = $('input[name="date_range_picker"]');
+    const getDateString = (date) => {
+      const newDate = new Date(date);
+      const monthNum = newDate.getMonth();
+      const day = newDate.getDate();
+      const year = newDate.getFullYear();
+  
+      let monthStr = ''
+      switch (monthNum) {
+        case 0:
+          monthStr = 'January'
+          break;
+      
+          case 1:
+          monthStr = 'February'
+          break;
+          case 2:
+          monthStr = 'March'
+          break;
+          case 3:
+          monthStr = 'April'
+          break;
+          case 4:
+          monthStr = 'May'
+          break;
+          case 5:
+          monthStr = 'June'
+          break;
+          case 6:
+          monthStr = 'July'
+          break;
+          case 7:
+          monthStr = 'August'
+          break;
+          case 8:
+          monthStr = 'September'
+          break;
+          case 9:
+          monthStr = 'October'
+          break;
+          case 10:
+          monthStr = 'November'
+          break;
+          case 11:
+          monthStr = 'December'
+          break;
+      
+        default:
+          break;
+      }
+  
+      return `${monthStr} ${day}, ${year}`;
+  
+    }
+    dateRangePicker.daterangepicker({
+      autoApply: true,
+      autoUpdateInput: true,
+      parentEl: '.booking-form'
+    }, function(start, end, label) {
+      console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+      $('input[name="check_in_date"]').value = (new Date(start).toJSON());
+      $('input[name="check_out_date"]').value = (new Date(end).toJSON());
+      $('#checkInDate').text(getDateString(start))
+      $('#checkOutDate').text(getDateString(end))
+  
+    });
+  
+  
+  document.getElementById('plusOneGuest').addEventListener('click', ()=> {
+    const numberOfAdultsInput = document.getElementById('number_adults')
+    const guestValue = Number(numberOfAdultsInput.value) || 0;
+    const newValue = guestValue + 1;
+    numberOfAdultsInput.value = newValue;
+    const numberOfGuestsLabel = document.getElementById('numberOfGuests');
+    numberOfGuestsLabel.innerText = String(newValue);
+  })
+  document.getElementById('minusOneGuest').addEventListener('click', ()=> {
+    const numberOfAdultsInput = document.getElementById('number_adults')
+    const guestValue = Number(numberOfAdultsInput.value) || 0;
+    const newValue = guestValue - 1 > 0 ? guestValue -1 : 1;
+    numberOfAdultsInput.value = newValue;
+    const numberOfGuestsLabel = document.getElementById('numberOfGuests');
+    numberOfGuestsLabel.innerText = String(newValue);
+  })
+  
+  </script>
